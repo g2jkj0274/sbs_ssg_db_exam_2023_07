@@ -3,11 +3,13 @@ package com.sbs.java.ssg.container;
 import com.sbs.java.ssg.controller.Session;
 import com.sbs.java.ssg.dao.ArticleDao;
 import com.sbs.java.ssg.dao.MemberDao;
+import com.sbs.java.ssg.db.DBConnection;
 import com.sbs.java.ssg.service.ArticleService;
 import com.sbs.java.ssg.service.ExportService;
 import com.sbs.java.ssg.service.MemberService;
 
 public class Container {
+	public static DBConnection dbConnection;
 	public static Session session;
 	public static ArticleDao articleDao;
 	public static MemberDao memberDao;
@@ -28,5 +30,10 @@ public class Container {
 		}
 		return session;
 	}
-
+	public static DBConnection getDBConnection() {
+		if(dbConnection == null) {
+			dbConnection = new DBConnection();
+		}
+		return dbConnection;
+	}
 }
