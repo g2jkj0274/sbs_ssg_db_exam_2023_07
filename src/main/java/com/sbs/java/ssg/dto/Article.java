@@ -2,6 +2,7 @@ package com.sbs.java.ssg.dto;
 
 import java.util.Map;
 import lombok.Data;
+import lombok.Getter;
 
 @Data
 public class Article extends Dto {
